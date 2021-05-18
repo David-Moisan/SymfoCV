@@ -35,7 +35,7 @@
                 Contactez-moi
             </div>
             <div class="message">
-                <form method="post" action="contact.php">
+                <form method="post" action="{{ path('contact')}}">
                     <input type="text" name="name" id="name" placeholder=" Société* " required>
                     <input type="email" name="email" id="email" placeholder=" Email* " required
                         pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$">
