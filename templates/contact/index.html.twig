@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block stylesheets %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./CSS/contact.css">
+    <link rel="shortcut icon" href="/source/logo.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% endblock %}
+
+{% block body %}
+<header>
+    <div class="headerContact">
+
+        <!--Logo and button-->
+        <img class="logo" src="/source/logoEvaBlack.png">
+        <a class="buttomContact" href="{{ path('home')}}">Accueil</a>
+    </div>
+
+    <!--FORM-->
+
+    <body>
+        <div class="frame">
+            <div id="button_open_envelope">
+                Contactez-moi
+            </div>
+            <div class="message">
+                <form method="post" action="contact.php">
+                    <input type="text" name="name" id="name" placeholder=" Société* " required>
+                    <input type="email" name="email" id="email" placeholder=" Email* " required
+                        pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$">
+                    <input type="text" name="phone" id="phone" placeholder=" Téléphone (optionnel)" autofocus>
+                    <textarea name="message" id="messarea" placeholder=" Message* " required></textarea>
+                    <input type="text" name="address" id="address" style="display: none;">
+                    <input type="submit" value="Envoyer" id="send">
+                </form>
+            </div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div>
+
+                <!--LINKEDIN-->
+                <a class="link" href="https://www.linkedin.com/in/eva-billaud-955616164/" target="_blank"><img
+                        class="imglink" src="/source/linkedin.svg"></a></div>
+            <script src="js/contact.js"></script>
+        </div>
+    </body>
+{% endblock %}
