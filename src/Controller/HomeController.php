@@ -22,7 +22,6 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         $projets = $this->repo->findAll();
-        dump($projets);
 
         return $this->render('home/index.html.twig', [
             'projets' => $projets,

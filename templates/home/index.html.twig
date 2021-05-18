@@ -20,6 +20,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <!-- Bootstrap v4.5 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -70,6 +73,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('contact')}}">Contact</a>
                         </li>
+                        {% if app.user%}
+                        <li class="nav-item">
+                            <a class="btn btn-muted" href=" {{ path('logout')}}"><i class="fa fa-sign-out"></i></a>
+                        </li>
+                        {% endif %}
+                        {% if not app.user%}
+                        <li class="nav-item">
+                            <a class="btn btn-muted" href=" {{ path('admin.index')}}"><i class="fa fa-sign-in"></i></a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

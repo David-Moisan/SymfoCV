@@ -76,12 +76,11 @@
 
     <main>
         <div class="container mt-5">
+            {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">{{message}}</div>
+            {% endfor %}
             <div class="row">
                 <h1 class="mt-5">Mes projets</h1>
-
-                {% for message in app.flashes('success') %}
-                    <div class="alert alert-success">{{message}}</div>
-                {% endfor %}
 
                 <table class="table stripped mt-4">
                     <thead>
@@ -96,7 +95,7 @@
                                 <td style="color: white;">{{ projet.titre }}</td>
                                 <td>
                                     <a href="{{ path("admin.edit", {id: projet.id} ) }}" class="btn btn-primary">Modifier</a>
-                                    <form action="{{ path('admin.delete', {id: projet.id} ) }}" style="display: inline-block;" onsubmit="return confirm('Êtes-vous sûr?')">
+                                    <form method="POST" action="{{ path('admin.delete', {id: projet.id} ) }}" style="display: inline-block;" onsubmit="return confirm('Êtes-vous sûr?')">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ projet.id) }}">
                                         <button class="btn btn-danger">Supprimer</button>
