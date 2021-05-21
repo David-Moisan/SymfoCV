@@ -4,7 +4,7 @@
 
 {% block stylesheets %}
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./CSS/contact.css">
+    <link rel="stylesheet" href="/css/contact.css">
     <link rel="shortcut icon" href="/source/logo.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,7 +35,24 @@
                 Contactez-moi
             </div>
             <div class="message">
-                <form method="post" action="{{ path('contact')}}">
+                {{ form_start(form)}}
+                <div class="col">
+                    {{ form_row(form.societe)}}
+                </div>
+                <div class="col">
+                    {{ form_row(form.email)}}
+                </div>
+                <div class="col">
+                    {{ form_row(form.telephone)}}
+                </div>
+                <div class="col">
+                    {{ form_row(form.message)}}
+                </div>
+                {{ form_widget(form)}}
+                <button class="btn" type="submit" id="submitBtn">{{button | default('Envoyer')}}</button>
+                {{ form_end(form)}}
+                <!-- ================================================================================= -->
+                <!--<form method="post" action="#">
                     <input type="text" name="name" id="name" placeholder=" Société* " required>
                     <input type="email" name="email" id="email" placeholder=" Email* " required
                         pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$">
@@ -43,7 +60,7 @@
                     <textarea name="message" id="messarea" placeholder=" Message* " required></textarea>
                     <input type="text" name="address" id="address" style="display: none;">
                     <input type="submit" value="Envoyer" id="send">
-                </form>
+                </form> -->
             </div>
             <div class="bottom"></div>
             <div class="left"></div>
