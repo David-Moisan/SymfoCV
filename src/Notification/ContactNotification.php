@@ -16,7 +16,7 @@ class ContactNotification
 
     public function notify(Contact $contact)
     {
-        $email = (new \Swift_Message('Tentative de contact :'.$contact->getSociete()))
+        $email = (new \Swift_Message('Expéditeur :'.$contact->getSociete()))
             ->setFrom($contact->getEmail())
             ->setTo('contact.evab@gmail.com')
             ->setBody($this->renderer->render('contact/index.html.twig', [
