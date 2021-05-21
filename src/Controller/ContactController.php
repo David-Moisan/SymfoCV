@@ -20,7 +20,7 @@ class ContactController extends AbstractController
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
-
+        dump($form);
         if ($form->isSubmitted() && $form->isValid()) {
             $notification->notify($contact);
             $this->addFlash('success', 'Votre email a bien été envoyé');

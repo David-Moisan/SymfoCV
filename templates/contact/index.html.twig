@@ -34,7 +34,7 @@
             <div id="button_open_envelope">
                 Contactez-moi
             </div>
-            <div class="message">
+            <div class="message" id="contactForm">
                 {{ form_start(form)}}
                 <div class="col">
                     {{ form_row(form.societe)}}
@@ -43,12 +43,12 @@
                     {{ form_row(form.email)}}
                 </div>
                 <div class="col">
-                    {{ form_row(form.telephone)}}
+                    <input type="text" name="phone" id="phone" placeholder=" Téléphone (optionnel)" autofocus>
                 </div>
                 <div class="col">
                     {{ form_row(form.message)}}
                 </div>
-                {{ form_widget(form)}}
+                {{ form_rest(form)}}
                 <button class="btn" type="submit" id="submitBtn">{{button | default('Envoyer')}}</button>
                 {{ form_end(form)}}
                 <!-- ================================================================================= -->

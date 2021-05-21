@@ -1,0 +1,31 @@
+{% block body %}
+<section>
+    <div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom de la société</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Société</td>
+                        <td>{{ contact.societe }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{ contact.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>Message</td>
+                        <td>{{ contact.message }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endblock  %}

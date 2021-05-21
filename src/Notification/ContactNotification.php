@@ -19,7 +19,7 @@ class ContactNotification
         $email = (new \Swift_Message('Expéditeur :'.$contact->getSociete()))
             ->setFrom($contact->getEmail())
             ->setTo('sitecv.eva@gmail.com')
-            ->setBody($this->renderer->render('contact/index.html.twig', [
+            ->setBody($this->renderer->render('contact/contact.html.twig', [
                 'contact' => $contact,
             ]), 'text/html');
         $this->mailer->send($email);
