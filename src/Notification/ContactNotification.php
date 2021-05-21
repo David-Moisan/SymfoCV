@@ -18,7 +18,7 @@ class ContactNotification
     {
         $email = (new \Swift_Message('Expéditeur :'.$contact->getSociete()))
             ->setFrom($contact->getEmail())
-            ->setTo('contact.evab@gmail.com')
+            ->setTo('sitecv.eva@gmail.com')
             ->setBody($this->renderer->render('contact/index.html.twig', [
                 'contact' => $contact,
             ]), 'text/html');
