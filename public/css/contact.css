@@ -68,7 +68,6 @@ a:hover {
 	left: 208px;
 	border-radius: 10px;
 	color: #fff;
-	font-size: 26px;
 	padding: 15px 0;
 	border: 2px solid #fff;
 	transition: .3s;
@@ -318,4 +317,13 @@ a.link:hover {
 	width: 6%;
 	margin-top: 10%;
 	margin-left: 72%;
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 812px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
 }
